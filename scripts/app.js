@@ -3,12 +3,35 @@ function init() {
   const cells = []
   const width = 9
   const cellCount = width * width
+  let nineCount = 1
+  let rowCount = 1
+  // const row1 = []
+  // const row2 = []
+  // const row3 = []
+  // const row4 = []
+  // const row5 = []
+  // const row6 = []
+  // const row7 = []
+  // const row8 = []
+  // const row9 = []
 
   function createGrid() {
     for (let i = 0; i < cellCount; i++) {
       const cell = document.createElement('div')
       // console.log((i / 3) % 1 )
-      // cell.classList.add(i)
+
+      cell.classList.add(`column${nineCount}`)
+      nineCount++
+
+      if (nineCount < 10) {
+        cell.classList.add(`row${rowCount}`)
+      } else {
+        cell.classList.add(`row${rowCount}`)
+        rowCount++
+        nineCount = 1
+      }
+
+      cell.innerHTML = i
       
       if ((i / 3) % 1 === 0) {
         cell.classList.add('left')
