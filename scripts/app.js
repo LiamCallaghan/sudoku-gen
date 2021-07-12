@@ -16,8 +16,11 @@ function init() {
       if (((i + 1) / 9) % 1 === 0) {
         cell.classList.add('right')
       }
-      if ((i > 17 && i < 27) || (i > 44 && i < 54)) {
+      if ((i > 17 && i < 27) || (i > 44 && i < 54) || (i > 71)) {
         cell.classList.add('bottom')
+      }
+      if (i < 9) {
+        cell.classList.add('top')
       }
       grid.appendChild(cell)
       cells.push(cell)
