@@ -22,7 +22,18 @@
   flex-grow: 1;
   width: 10%;
   height: 10%;
-  /* height: 5%;
-  width: 2.5%; */
-  background-color: blue;
+  /* background-color: blue; */
+}
+
+.grid div.left {
+  border-left: 1px solid red;
+  /* background-color: red; */
+}
+
+.grid div.right {
+  border-right: 1px solid red;
+}
+
+.grid div.bottom {
+  border-bottom: 1px solid red;
 }
