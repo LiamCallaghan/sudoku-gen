@@ -5,13 +5,14 @@ function init() {
   const cellCount = width * width
   let nineCount = 1
   let rowCount = 1
-
+  const number = document.querySelector('.column1')
+  
   function rowMaker() {
-
+    
     function randomNum(square) {
       square.innerHTML = Math.floor((Math.random() * 9) + 1)
     }
-
+    
     const row1 = document.querySelectorAll('.row1')
     const row2 = document.querySelectorAll('.row2')
     const row3 = document.querySelectorAll('.row3')
@@ -21,7 +22,7 @@ function init() {
     const row7 = document.querySelectorAll('.row7')
     const row8 = document.querySelectorAll('.row8')
     const row9 = document.querySelectorAll('.row9')
-
+    
     row1.forEach(randomNum)
     row2.forEach(randomNum)
     row3.forEach(randomNum)
@@ -32,15 +33,15 @@ function init() {
     row8.forEach(randomNum)
     row9.forEach(randomNum)
   }
-
+  
   function createGrid() {
     for (let i = 0; i < cellCount; i++) {
       const cell = document.createElement('div')
       // console.log((i / 3) % 1 )
-
+      
       cell.classList.add(`column${nineCount}`)
       nineCount++
-
+      
       if (nineCount < 10) {
         cell.classList.add(`row${rowCount}`)
       } else {
@@ -48,7 +49,7 @@ function init() {
         rowCount++
         nineCount = 1
       }
-
+      
       // cell.innerHTML = i
       
       if ((i / 3) % 1 === 0) {
@@ -67,8 +68,16 @@ function init() {
       cells.push(cell)
     }
   }
+  
+  function numberUp(number) {
+    number.innerHTML = number++
+    console.log(number)
+  }
   createGrid()
   rowMaker()
+  
+  console.log(number)
+  // number.addEventListener('click', numberUp)
 }
 
 window.addEventListener('DOMContentLoaded', init)
