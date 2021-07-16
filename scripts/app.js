@@ -5,7 +5,10 @@ function init() {
   const cellCount = width * width
   let nineCount = 1
   let rowCount = 1
-  const number = document.querySelector('.column1')
+  // const number = document.querySelector('.column1').addEventListener('click', function() {
+  //   numberUp(number)
+  // })
+
   
   function rowMaker() {
     
@@ -69,14 +72,18 @@ function init() {
     }
   }
   
-  function numberUp(number) {
-    number.innerHTML = number++
-    console.log(number)
-  }
+  // function numberUp(number) {
+  //   number.innerHTML = number++
+  //   console.log(number)
+  // }
   createGrid()
   rowMaker()
   
-  console.log(number)
+  let number = document.querySelector('.column1').addEventListener('click', function() {
+      number.innerHTML = number++
+      console.log(number)
+  })
+  
   // number.addEventListener('click', numberUp)
 }
 
