@@ -78,10 +78,9 @@ function init() {
   // }
   createGrid()
   rowMaker()
-  
+
   let number = document.querySelector('.column1').addEventListener('click', function() {
-      number.innerHTML = number++
-      console.log(number)
+    document.querySelector('.column1').innerHTML++
   })
   
   // number.addEventListener('click', numberUp)
